@@ -1,8 +1,11 @@
+import { combineReducers } from 'redux';
+
 import { FEATURE_SELECTED, FEATURE_REMOVED } from "../Actions";
 
 const initialState = {
   additionalPrice: 0,
   car: {
+    color: "black",
     price: 26395,
     name: "2019 Ford Mustang",
     image:
@@ -17,7 +20,14 @@ const initialState = {
   ],
 };
 
-const reducer = (state = initialState, action) => {
+const carReducer = (state = initialState) => {
+  return {
+    car: state.car,
+    additionalFeatures: state.additionalFeatures
+}
+}
+
+const selectedFeatureReducer = (state = initialState, action) => {
   if (action.type === FEATURE_SELECTED) {
     const { price } = action.payload;
     if (!state.car.features.includes(action.payload)) {
@@ -33,7 +43,9 @@ const reducer = (state = initialState, action) => {
   } else {
     return state;
   }
+};
 
+const removedFeatureReducer = (state = initialState, action) => {
   if (action.type === FEATURE_REMOVED) {
     const { price, id } = action.payload;
     return {
@@ -41,10 +53,19 @@ const reducer = (state = initialState, action) => {
       additionalPrice: (state.additionalPrice -= price),
       car: {
         ...state.car,
-        features: state.car.features.filter((feature) => feature.id !== id),
-      },
+        features: state.car.features.filter(feature => feature.id !== id)
+      }
     };
+  } else {
+    return state;
   }
 };
 
-export default reducer;
+ 
+
+export default combineReducers({
+  car: carReducer,
+  selectedFeature: selectedFeatureReducer,
+  removedFeature: removedFeatureReducer
+});
+

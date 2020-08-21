@@ -3,7 +3,7 @@ import React from 'react';
 // import { selectFeature } from '../Actions'
 
 const AdditionalFeature = props => {
-  console.log('AF props:', props);
+  // console.log('AF props:', props);
   
   return (
     <li>

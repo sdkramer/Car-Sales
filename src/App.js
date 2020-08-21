@@ -7,7 +7,7 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
-const App = ({car, store, additionalPrice, additionalFeatures, selectFeature, removeFeature }) => {
+const App = ({store, additionalPrice, additionalFeatures, selectFeature, removeFeature }) => {
   // const state = {
   //   additionalPrice: 0,
   //   car: {
@@ -25,7 +25,7 @@ const App = ({car, store, additionalPrice, additionalFeatures, selectFeature, re
   //   ]
   // };
 
-  console.log('store', car);
+ 
   
 
   const remove = feature => {
@@ -39,12 +39,12 @@ const buyItem = feature => {
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={car} />
-        <AddedFeatures car={car} remove={remove}/>
+        <Header />
+        <AddedFeatures remove={remove}/>
       </div>
       <div className="box">
         <AdditionalFeatures buyItem={buyItem} store={store} additionalFeatures={additionalFeatures}/>
-        <Total car={car} additionalPrice={additionalPrice} />
+        <Total additionalPrice={additionalPrice} />
       </div>
     </div>
   );
@@ -52,7 +52,7 @@ const buyItem = feature => {
 
 const mapStateToProps = state => {
   return {
-    car: state.car,
+    // car: state.car,
     store: state.store,
     additionalPrice: state.additionalPrice,
     additionalFeatures: state.additionalFeatures
