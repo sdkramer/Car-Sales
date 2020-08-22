@@ -1,9 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { selectFeature } from '../Actions';
 
 // import { selectFeature } from '../Actions'
 
 const AdditionalFeature = props => {
-  // console.log('AF props:', props);
+  console.log('AF props:', props);
   
   return (
     <li>
@@ -14,5 +16,14 @@ const AdditionalFeature = props => {
   );
 };
 
+const mapStateToProps = (state) => {
+  console.log("AF state: ", state);
+  return {
 
-export default AdditionalFeature;
+  }
+};
+
+const mapDispatchToProps = { selectFeature };
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdditionalFeature);

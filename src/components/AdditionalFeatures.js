@@ -4,7 +4,7 @@ import AdditionalFeature from './AdditionalFeature';
 
 
 const AdditionalFeatures = props => {
-  console.log('AFs props:', props);
+  // console.log('AFs props:', props);
   
   return (
     <div className="content">
@@ -24,7 +24,7 @@ const AdditionalFeatures = props => {
 };
 
 const mapStateToProps = (state) => {
-console.log("AdditionalFeatures state: ", state);
+// console.log("AdditionalFeatures state: ", state);
 return {
   additionalFeatures: state.car.additionalFeatures
 }

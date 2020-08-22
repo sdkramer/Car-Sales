@@ -43,7 +43,7 @@ const buyItem = feature => {
         <AddedFeatures remove={remove}/>
       </div>
       <div className="box">
-        <AdditionalFeatures buyItem={buyItem} store={store} additionalFeatures={additionalFeatures}/>
+        <AdditionalFeatures buyItem={buyItem} />
         <Total additionalPrice={additionalPrice} />
       </div>
     </div>
