@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 
 const Header = (props) => {
-  // console.log('header props', props);
+  console.log('header props', props);
   
   return (
     <>
@@ -18,7 +18,7 @@ const Header = (props) => {
 };
 
 const mapStateToProps = state => {
-// console.log("Header state: ", state);
+console.log("Header state: ", state);
 return {
   car: state.car.car,
   
