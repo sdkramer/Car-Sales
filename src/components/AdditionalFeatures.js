@@ -13,7 +13,7 @@ const AdditionalFeatures = props => {
         <ol type="1">
           {props.additionalFeatures.map(item => (
             <AdditionalFeature key={item.id}
-            buyItem={props.buyItem} feature={item} />
+             feature={item} />
           ))}
         </ol>
       ) : (

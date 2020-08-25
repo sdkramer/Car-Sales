@@ -1,10 +1,11 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 
 import AddedFeature from './AddedFeature';
 
+
 const AddedFeatures = props => {
-  // console.log('adfs props', props);
+  console.log('addfs props', props);
   
   return (
     <div className="content">
@@ -22,5 +23,9 @@ const AddedFeatures = props => {
   );
 };
 
+const mapStateToProps = (state) => {
+  console.log("addfss state: ", state);
+}
 
-export default AddedFeatures;
+
+export default connect(mapStateToProps)(AddedFeatures);

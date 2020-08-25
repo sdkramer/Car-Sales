@@ -29,7 +29,7 @@ const carReducer = (state = initialState) => {
 
 const selectedFeatureReducer = (state = initialState, action) => {
   if (action.type === FEATURE_SELECTED) {
-    const { price } = action.payload;
+    const { price } = action.payload.price;
     if (!state.car.features.includes(action.payload)) {
       return {
         ...state,
